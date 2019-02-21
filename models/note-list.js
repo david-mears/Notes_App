@@ -16,5 +16,9 @@
       this.notes.push(newNote)
     }
 
+    NoteList.prototype.allNotes = function() {
+      return this.notes
+    }
+
     exports.noteList = NoteList
 })(this)
