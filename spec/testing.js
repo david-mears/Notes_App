@@ -1,7 +1,3 @@
-'use strict';
-
-var noteModel = require('./note-model.js');
-
 var assert = {
   isTrue: function(assertionToCheck) {
     if (!assertionToCheck) {
@@ -12,6 +8,4 @@ var assert = {
   }
 };
 
-var newNote = new noteModel.note('Test message');
-assert.isTrue(newNote.text == 'Test message');
-assert.isTrue(newNote.read() == 'Test message');
+this.assert = assert
