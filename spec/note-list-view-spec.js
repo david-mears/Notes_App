@@ -6,6 +6,7 @@ var noteListModel = require('../models/note-list.js');
 
 var testNoteList = new noteListModel.noteList;
 var newView = new noteListViewModel.noteListView(testNoteList);
+test.assert.isTrue(newView.makeView() == '<ul></ul>')
 testNoteList.addMessage('Note one')
 test.assert.isTrue(newView.makeView() == '<ul><li><div>Note one</div></li></ul>')
 testNoteList.addMessage('Note two')
