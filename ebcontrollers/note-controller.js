@@ -7,8 +7,7 @@
 
     function NoteController(noteList) {
         this.noteList = noteList;
-        this.noteList.addMessage('Favourite drink: seltzer')
-        this.noteListView = new NoteListView(this.noteList)
+        this.noteListView = new NoteListView(this.noteList);
     }
 
     NoteController.prototype.addHTMLtoAppElement = function() {
@@ -18,9 +17,9 @@
 
     function getNoteTextById(id) {
       var i;
-      for (i = 0; i < allNotes.length; i++) {
-          if (allNotes[i].id == id) {
-              return allNotes[i].text
+      for (i = 0; i < this.noteList.length; i++) {
+          if (this.noteList[i].id == id) {
+              return this.noteList[i].text
           }
       }
       return 'Note not found.'
@@ -39,15 +38,16 @@
 
     makeUrlChangeShowRelevantNote();
 
-    function listenForFormSubmit() {
+    function makeNoteOnFormSubmit() {
         var form = document.getElementById('text');
         form.addEventListener('submit', function(event) {
-            console.log('OK!')
-            event.preventDefault()
-        })
+            event.preventDefault();
+            pageNoteList.addMessage(event.target[0].value);
+            controller.addHTMLtoAppElement();
+        });
     };
 
-    listenForFormSubmit();
+    makeNoteOnFormSubmit();
 
     exports.NoteController = NoteController
 

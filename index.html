@@ -18,11 +18,16 @@
     </form>
   </div>
 
-  <script src = './pmodels/note.js'></script>
-  <script src = './pmodels/single-note-view.js'></script>
-  <script src = './pmodels/note-list.js'></script>
-  <script src = './pmodels/note-list-view.js'></script>
-  <script src = './qcontrollers/note-controller.js'></script>
+  <script src = './vmodels/note.js'></script>
+  <script src = './vmodels/single-note-view.js'></script>
+  <script src = './vmodels/note-list.js'></script>
+  <script src = './vmodels/note-list-view.js'></script>
+  <script src = './ebcontrollers/note-controller.js'></script>
+  <script>
+      var pageNoteList = new NoteList(this);
+      var controller = new NoteController(pageNoteList);
+  </script>
+
 
   </body>
 </html>
