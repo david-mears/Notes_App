@@ -39,6 +39,16 @@
 
     makeUrlChangeShowRelevantNote();
 
+    function listenForFormSubmit() {
+        var form = document.getElementById('text');
+        form.addEventListener('submit', function(event) {
+            console.log('OK!')
+            event.preventDefault()
+        })
+    };
+
+    listenForFormSubmit();
+
     exports.NoteController = NoteController
 
 })(this)
