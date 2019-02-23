@@ -2,8 +2,8 @@
 
 (function(exports) {
 
-    function NoteList() {
-        this.noteModel = require('./note.js');
+    function NoteList(noteModelOrScopeOnWhichNoteCanBeFound) {
+        this.noteModel = noteModelOrScopeOnWhichNoteCanBeFound;
         this.notes = [];
     }
 
@@ -12,7 +12,7 @@
     }
 
     NoteList.prototype.addMessage = function(newMessage) {
-      var newNote = new this.noteModel.note(newMessage)
+      var newNote = new this.noteModel.Note(newMessage)
       this.notes.push(newNote)
     }
 
@@ -20,5 +20,5 @@
       return this.notes
     }
 
-    exports.noteList = NoteList
+    exports.NoteList = NoteList
 })(this)

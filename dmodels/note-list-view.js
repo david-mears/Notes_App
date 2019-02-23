@@ -14,6 +14,6 @@
         return elements.join('')
     };
 
-    exports.noteListView = NoteListView
+    exports.NoteListView = NoteListView
 
 })(this)
