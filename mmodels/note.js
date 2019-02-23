@@ -2,8 +2,12 @@
 
 (function(exports) {
 
+    var counter = 0;
+
     function Note(message='This is a message') {
-        this.text = message
+        counter += 1;
+        this.text = message;
+        this.id = counter;
     }
 
     Note.prototype.read = function() {
