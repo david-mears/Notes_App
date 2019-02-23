@@ -8,7 +8,8 @@
         elements = ['<ul>']
         var i;
         for (i = 0; i < this.noteList.notes.length; i++) {
-            elements.push('<li><div>' + NoteListView.prototype.curtail(this.noteList.notes[i].text) + '</div></li>')
+            var note = this.noteList.notes[i]
+            elements.push('<li><div><a href="#notes/' + note.id + '">' + NoteListView.prototype.curtail(note.text) + '</a></div></li>')
         };
         elements.push('</ul>')
         return elements.join('')
